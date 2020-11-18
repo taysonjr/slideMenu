@@ -1,0 +1,243 @@
+@charset "UTF-8";
+
+body{
+  position:relative;
+  font-size: 62.5%;
+  line-height:1.8;
+  margin:0;
+  background: url(../img/bg.jpg);
+}
+
+h1,h2,p,span,li{
+  font-family: 'Roboto Condensed', Arial, Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  color: #000;
+}
+
+a, a.btn{
+  text-decoration: none;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+.inner{
+  position:relative;
+  width:60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#wrapper{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+#headerContainer{
+  position:fixed;
+  width:100%;
+  min-height: 24px;
+  z-index:1000;
+}
+
+#siteID{
+  font-size:1.8em;
+  font-weight:700;
+  line-height:1;
+  margin: 15px 0 0 20px;
+  padding :0;
+  color: #000;
+}
+
+#footerContainer{
+  position:absolute;
+  left: 0;
+  bottom:0;
+  z-index:100;
+  width: 100%;
+  padding: 0.5em 0;
+  background: #000;
+}
+#copyright{
+  color:#fff;
+  text-align: center;
+  font-size: 1.4em;
+  margin: 0;
+}
+
+#contentContainer{
+  padding: 60px 0;
+  margin: 0 auto;
+}
+#contentContainer ul,
+#contentContainer li{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+#galleryContainer{
+  position: relative;
+}
+#galleryContainer .column{
+  width: 100%;
+  min-height: 300px;
+  margin-bottom:50px;
+  background-color:black;
+}
+#galleryContainer img{
+  display: block;
+  width: 100%;
+  height:auto;
+}
+
+/* slide */
+#subContainer{
+  position:fixed;
+  left: -260px;
+  top:0;
+  z-index:500;
+  width:260px;
+  height:100%;
+  background-color: rgba(255,255,255,0.9);
+  -webkit-trasition: left 0.4s ease-in-out;
+  transition: left 0.4s ease-in-out;
+  behavior: url(PIE.htc);
+}
+#subContainer.appeared{
+  left:0;
+}
+#mainNavigation{
+  position:relative;
+  top:60px;
+}
+#mainNavigation li{
+  padding-top: 1px;
+  margin-bottom:1px;
+}
+#mainNavigation a{
+  display: block;
+  padding: 1.5em;
+  overflow: hidden;
+  color:#888;
+  border-left: 0.5em solid #ddd;
+}
+#mainNavigation .separate a{
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+#mainNavigation i{
+  display: inline-block;
+  width:18%;
+  vertical-align: middle;
+  font-size: 2.5em;
+  line-height: 1;
+  color: inherit;
+}
+#mainNavigation span{
+  display: inline-block;
+  font-size: 1.6em;
+  line-height: 1;
+  vertical-align: middle;
+  width: 70%;
+  color: inherit;
+}
+#mainNavigation a,
+#mainNavigation a:hover i,
+#mainNavigation a:hover span{
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+#mainNavigation .nav_bookmark a{
+  padding-left:1.8em;
+}
+#mainNavigation .nav_search a:hover{
+  color: #717fe7;
+  border-color: #717fe7;
+  background-color: #f4f5ff;
+}
+#mainNavigation .nav_bookmark a:hover{
+  color: #FFB15C;
+  border-color: #FFB15C;
+  background-color: #FFF3E7;
+}
+#mainNavigation .nav_tags a:hover{
+  color: #7AD8E9;
+  border-color: #7AD8E9;
+  background-color: #F7FBFF;
+}
+#mainNavigation .nav_heart a:hover{
+  color:#FF93FB;
+  border-color: #FF93FB;
+  background-color:#FCF0FB;
+}
+#mainNavigation .nav_comment a:hover{
+  color:#73DF50;
+  border-color: #73DF50;
+  background-color: #F3FFEF;
+}
+#mainNavigation .nav_gear a:hover{
+  color: #E2C528;
+  border-color: #E2C528;
+  background-color: #FFFdEa;
+}
+
+#mainNavigation .mainNavigation_trigger{
+  position:absolute;
+  bottom: 0;
+  right: -4em;
+  width: 4em;
+  border-radius: 0 8px 8px 0;
+  background-color: rgba(255,255,255,0.9);
+  behavior: url(PIE.htc);
+}
+#mainNavigation .mainNavigation_trigger a{
+  border: none;
+  padding: 1em 1em 0.75em 0.75em;
+  cursor: pointer;
+}
+#mainNavigation .mainNavigation_trigger i{
+  width: auto;
+}
+
+/* responsive */
+@media only screen and (min-width: 321px) and (max-width:768px) {
+  .inner{
+    max-width:75%;
+    min-width:75%;
+    width: 75%;
+  }
+  #galleryContainer .column{
+    width: 100%;
+    min-height: 120px;
+    margin-bottom: 80px;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width:599px){
+  #subContainer{
+    left: -80%;
+    width: 80%;
+  }
+  #mainNavigation li{
+    float: left;
+    width:50%;
+  }
+  #mainNavigation .mainNavigation_trigger{
+    top: 10em;
+    bottom: auto;
+  }
+}
+@media only screen and (max-width: 320px){
+  .inner{
+    max-width:94%;
+    min-width: 94%;
+    width:94%;
+  }
+  #copyright{
+    text-align:center;
+  }
+  #galleryContainer .column{
+    width:100%;
+    min-height:120px;
+    margin-bottom:80px;
+  }
+}
